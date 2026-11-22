@@ -1,11 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://team-novaris.com/</loc>
     <lastmod>2026-11-22</lastmod>
+    <image:image><image:loc>https://team-novaris.com/assets/world-finals.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/redshift-side.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://team-novaris.com/gallery.html</loc>
     <lastmod>2026-11-22</lastmod>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/garage-team.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/pit-lane.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/mercedes-selfie.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/mercedes-conversation.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/mercedes-car-chat.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/mercedes-team-briefing.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/mercedes-garage-talk.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/trophy-display.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/world-finals.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/fastest-car-presenter.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/australia-roll-call.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/world-finals-flags.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/world-finals-group.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/project-management.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/design-engineering.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/racing-walk.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/racing-fist-bump.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-171.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-160.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-158.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-157.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-95.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-94.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-93.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-81.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-80.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-79.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-78.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/awards-day3-67.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/design-station.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/computer-station.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/computer-team.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/at-the-bench.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/hearing-protection.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/component-check.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/bench-assembly.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/workbench-team.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/workshop-plans.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/workshop-floor.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/design-discussion.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/workshop-conversation.webp</image:loc></image:image>
+    <image:image><image:loc>https://team-novaris.com/assets/gallery/model-inspection.webp</image:loc></image:image>
   </url>
 </urlset>

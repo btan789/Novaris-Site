@@ -17,6 +17,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="The Novaris team raises the Fastest Car trophy on stage at the 2026 STEM Racing World Finals in Singapore.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="max-image-preview:large">
   <title>Novaris STEM Racing | 2026 World Finals Fastest Car, Melbourne</title>
   <script>
     document.documentElement.classList.add("is-site-loading");
@@ -31,16 +32,17 @@
     }, { once: true });
   </script>
   <link rel="icon" href="assets/novaris.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/novaris-logo-512.png">
   <link rel="preload" href="assets/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/novaris.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="site.css?v=world-finals-caption">
+  <link rel="stylesheet" href="site.css?v=seo-fixes-2">
   <link rel="stylesheet" href="page-loader.css">
   <link rel="stylesheet" href="finish-line.css?v=footer-address">
   <link rel="stylesheet" href="partner-orbits.css?v=tier-colours">
   <script src="starfield.js?v=page-loader" defer></script>
   <script src="finish-line.js?v=longer-braking" defer></script>
   <script src="cars.js?v=redshift-wordmark" defer></script>
-  <script src="team.js?v=signatures" defer></script>
+  <script src="team.js?v=profile-alt" defer></script>
   <script src="achievements.js?v=photo-glide" type="module"></script>
   <script type="module" src="partner-orbits.js?v=tier-colours"></script>
   <script type="module" src="home-loader.js?v=quicker-reveal"></script>
@@ -69,7 +71,12 @@
         "url": "https://team-novaris.com/",
         "sport": "STEM Racing (formerly F1 in Schools)",
         "description": "Novaris is a student engineering team from Trinity Grammar School in Kew, Melbourne, competing in STEM Racing. Its NV-45 Redshift won the Fastest Car award at the 2026 STEM Racing World Finals in Singapore, where Novaris placed 14th overall out of 91 teams. Novaris won the Development Class at the 2026 Australian National Finals.",
-        "logo": "https://team-novaris.com/assets/novaris.svg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://team-novaris.com/assets/novaris-logo-512.png",
+          "width": 512,
+          "height": 512
+        },
         "image": "https://team-novaris.com/assets/share.jpg",
         "email": "info@team-novaris.com",
         "location": {
@@ -83,6 +90,7 @@
         },
         "parentOrganization": {
           "@type": "School",
+          "@id": "https://team-novaris.com/#school",
           "name": "Trinity Grammar School",
           "url": "https://trinity.vic.edu.au"
         },
@@ -151,9 +159,7 @@
             "url": "https://anmfc.com"
           },
           {
-            "@type": "Organization",
-            "name": "Trinity Grammar School",
-            "url": "https://trinity.vic.edu.au"
+            "@id": "https://team-novaris.com/#school"
           },
           {
             "@type": "Organization",
@@ -257,7 +263,10 @@
           <h1 id="hero-title">NOVARIS</h1>
           <p class="hero-slogan">Pointing Forwards.</p>
           <p class="intro">A student STEM Racing team from Trinity Grammar School in Kew, Melbourne. The fastest car at the 2026 World Finals.</p>
-          <a class="explore glass pill" href="#cars">Explore the cars</a>
+          <div class="hero-actions">
+            <a class="explore glass pill" href="#cars">Explore the cars</a>
+            <a class="explore glass pill" href="#partners">Partner with us</a>
+          </div>
         </div>
       </div>
       <div class="caption glass pill">STEM Racing World Finals 2026, Singapore</div>
@@ -475,7 +484,7 @@
             <ul class="partner-grid partner-grid--title">
               <li style="--planet-accent: #d4af35"><span class="partner-logo"><img src="assets/partners/tdinvestments.svg" alt="TD Investments" loading="lazy" decoding="async"></span></li>
               <li style="--planet-accent: #e32e26"
-                data-description="RMIT University is an international university of technology, design, and enterprise, recognized for practical education and impactful research. By bridging academic excellence with real-world industry collaboration, RMIT empowers students and partners to drive innovation, solve complex technical challenges, and shape future-ready industries."><a class="partner-logo" href="https://rmit.edu.au"><img src="assets/partners/rmit.svg" alt="RMIT University" loading="lazy" decoding="async"></a></li>
+                data-description="RMIT University is an international university of technology, design, and enterprise, recognised for practical education and impactful research. By bridging academic excellence with real-world industry collaboration, RMIT empowers students and partners to drive innovation, solve complex technical challenges, and shape future-ready industries."><a class="partner-logo" href="https://rmit.edu.au"><img src="assets/partners/rmit.svg" alt="RMIT University" loading="lazy" decoding="async"></a></li>
             </ul>
           </section>
           <section class="partner-tier" data-tier="principal" aria-labelledby="principal-partners">
@@ -486,23 +495,23 @@
               <li style="--planet-accent: #ebe9e1"
                 data-description="Trinity Grammar School is a leading educational institution committed to fostering holistic student development, critical thinking, and technical capability. Through robust curricular and co-curricular STEM initiatives, Trinity encourages young minds to explore complex problem-solving and hands-on engineering challenges."><a class="partner-logo" href="https://trinity.vic.edu.au"><img src="assets/partners/trinity.svg" alt="Trinity Grammar School" loading="lazy" decoding="async"></a></li>
               <li style="--planet-accent: #0962ab"
-                data-description="The REA Foundation facilitates transformative STEM career education programs, linking schools, industry, TAFE and universities to fundamentally shift student and teacher capabilities. By engaging young people in authentic, project-based learning, REA inspires students to take up STEM  career pathways after school."><a class="partner-logo" href="https://rea.org.au"><img src="assets/partners/rea.svg" alt="REA Foundation" loading="lazy" decoding="async"></a></li>
+                data-description="The REA Foundation facilitates transformative STEM career education programs, linking schools, industry, TAFE and universities to fundamentally shift student and teacher capabilities. By engaging young people in authentic, project-based learning, REA inspires students to take up STEM career pathways after school."><a class="partner-logo" href="https://rea.org.au"><img src="assets/partners/rea.svg" alt="REA Foundation" loading="lazy" decoding="async"></a></li>
               <li style="--planet-accent: #70c05f"
-                data-description="S-Trend creates exceptional apparel tailored for athletes and organizations. Leveraging digital 3D simulation technology, sustainable materials, and advanced technical fabrications, S-Trend delivers durable, professional-grade kits designed to perform under demanding conditions."><a class="partner-logo" href="https://www.s-trend.com.au"><img src="assets/partners/strend.svg" alt="S-Trend" loading="lazy" decoding="async"></a></li>
+                data-description="S-Trend creates exceptional apparel tailored for athletes and organisations. Leveraging digital 3D simulation technology, sustainable materials, and advanced technical fabrications, S-Trend delivers durable, professional-grade kits designed to perform under demanding conditions."><a class="partner-logo" href="https://www.s-trend.com.au"><img src="assets/partners/strend.svg" alt="S-Trend" loading="lazy" decoding="async"></a></li>
               <li style="--planet-accent: #294a85"
-                data-description="Alfa Romeo is a historic Italian automotive manufacturer renowned for its rich racing heritage, distinctive design philosophy, and high-performance engineering. Blending Italian passion with advanced automotive craftsmanship, the brand symbolizes speed, agility, and a relentless pursuit of driving excellence."><a class="partner-logo" href="https://alfaromeo.com.au">
+                data-description="Alfa Romeo is a historic Italian automotive manufacturer renowned for its rich racing heritage, distinctive design philosophy, and high-performance engineering. Blending Italian passion with advanced automotive craftsmanship, the brand symbolises speed, agility, and a relentless pursuit of driving excellence."><a class="partner-logo" href="https://alfaromeo.com.au">
                 <img src="assets/partners/alfaromeowhite.svg" alt="Alfa Romeo" loading="lazy" decoding="async">
                 <img class="partner-colour" src="assets/partners/alfaromeo.svg" alt="" loading="lazy" decoding="async">
               </a></li>
               <li style="--planet-accent: #e0e0e0"
                 data-description="Jaguar is a globally celebrated luxury automotive brand famous for its iconic sports cars, elegance, and cutting-edge engineering. Rooted in a distinguished motorsport history, Jaguar combines striking design with thrilling performance and advanced technological innovation."><a class="partner-logo" href="https://jaguar.com"><img src="assets/partners/jaguar.svg" alt="Jaguar" loading="lazy" decoding="async"></a></li>
               <li style="--planet-accent: #b5b5b5"
-                data-description="Chrysler is an iconic automotive brand recognized for engineering dependable, comfortable, and feature-rich vehicles. With a long-standing history of American automotive innovation, Chrysler focuses on practical performance, passenger comfort, and progressive design solutions."><a class="partner-logo" href="https://chrysler.com.au">
+                data-description="Chrysler is an iconic automotive brand recognised for engineering dependable, comfortable, and feature-rich vehicles. With a long-standing history of American automotive innovation, Chrysler focuses on practical performance, passenger comfort, and progressive design solutions."><a class="partner-logo" href="https://chrysler.com.au">
                 <img src="assets/partners/chryslerwhite.svg" alt="Chrysler" loading="lazy" decoding="async">
                 <img class="partner-colour" src="assets/partners/chrysler.svg" alt="" loading="lazy" decoding="async">
               </a></li>
               <li style="--planet-accent: #eb312a"
-                data-description="Rocket Digital specialises in high quality, large format digital printing. They&#x27;re not just printers, they&#x27;re partners, striving to exceed excpectations every time. Rocket Digital take pride in their work and don&#x27;t compromise on quality. Passion and experience combine with the latest technology to deliver true innovation."><a class="partner-logo" href="https://rocketdigital.com.au">
+                data-description="Rocket Digital specialises in high quality, large format digital printing. They&#x27;re not just printers, they&#x27;re partners, striving to exceed expectations every time. Rocket Digital take pride in their work and don&#x27;t compromise on quality. Passion and experience combine with the latest technology to deliver true innovation."><a class="partner-logo" href="https://rocketdigital.com.au">
                 <img src="assets/partners/rocketdigitalwhite.svg" alt="Rocket Digital" loading="lazy" decoding="async">
                 <img class="partner-colour" src="assets/partners/rocketdigital.svg" alt="" loading="lazy" decoding="async">
               </a></li>
@@ -512,15 +521,15 @@
             <h3 id="technical-partners">Technical Partners</h3>
             <ul class="partner-grid partner-grid--technical">
               <li style="--planet-accent: #266ab4"
-                data-description="FastPreci is an engineering-oriented custom manufacturing partner specializing in precision CNC machining for prototypes and production parts. We help engineers and procurement teams turn designs into reliable, manufacturable components through responsive engineering support, practical DFM feedback, consistent quality control, and flexible production capabilities. From complex prototypes to repeat production, FastPreci supports customers with clear communication and dependable execution."><a class="partner-logo" href="https://www.fastpreci.com"><img src="assets/partners/fastpreci.svg" alt="FastPreci" loading="lazy" decoding="async"></a></li>
+                data-description="FastPreci is an engineering-oriented custom manufacturing partner specialising in precision CNC machining for prototypes and production parts. They help engineers and procurement teams turn designs into reliable, manufacturable components through responsive engineering support, practical DFM feedback, consistent quality control, and flexible production capabilities. From complex prototypes to repeat production, FastPreci supports customers with clear communication and dependable execution."><a class="partner-logo" href="https://www.fastpreci.com"><img src="assets/partners/fastpreci.svg" alt="FastPreci" loading="lazy" decoding="async"></a></li>
               <li style="--planet-accent: #208943"
-                data-description="PCBWay is a premier advanced manufacturing partner specializing in PCB prototyping, multi-layer circuit board fabrication, and full-turnkey contract assembly. Known for rapid turnaround times and rigorous quality assurance, they empower engineers and innovators worldwide to bring complex electronic hardware designs to life efficiently."><a class="partner-logo" href="https://www.pcbway.com"><img src="assets/partners/pcbway.svg" alt="PCBWay" loading="lazy" decoding="async"></a></li>
+                data-description="PCBWay is a premier advanced manufacturing partner specialising in PCB prototyping, multi-layer circuit board fabrication, and full-turnkey contract assembly. Known for rapid turnaround times and rigorous quality assurance, they empower engineers and innovators worldwide to bring complex electronic hardware designs to life efficiently."><a class="partner-logo" href="https://www.pcbway.com"><img src="assets/partners/pcbway.svg" alt="PCBWay" loading="lazy" decoding="async"></a></li>
               <li style="--planet-accent: #e47d34"
                 data-description="Objective3D is a leading additive manufacturing and 3D printing solutions provider across Australasia, offering cutting-edge Stratasys hardware, materials, and bureau services. They help engineers and designers bridge the gap between digital concepts and functional physical reality through rapid prototyping and expert technical support."><a class="partner-logo" href="https://objective3d.com.au"><img src="assets/partners/o3d.svg" alt="Objective3D" loading="lazy" decoding="async"></a></li>
               <li style="--planet-accent: #ffb71b"
-                data-description="Ansys is a global leader in engineering simulation software, empowering design and development teams to predict how products behave under real-world physical conditions. By providing advanced tools for structural analysis, fluid dynamics, and multiphysics modeling, Ansys helps innovators optimize performance and reduce physical prototyping costs."><a class="partner-logo" href="https://ansys.synopsys.com"><img src="assets/partners/ansys.svg" alt="Ansys" loading="lazy" decoding="async"></a></li>
+                data-description="Ansys is a global leader in engineering simulation software, empowering design and development teams to predict how products behave under real-world physical conditions. By providing advanced tools for structural analysis, fluid dynamics, and multiphysics modelling, Ansys helps innovators optimise performance and reduce physical prototyping costs."><a class="partner-logo" href="https://ansys.synopsys.com"><img src="assets/partners/ansys.svg" alt="Ansys" loading="lazy" decoding="async"></a></li>
               <li style="--planet-accent: #ffffff"
-                data-description="Autodesk is a global technology leader providing robust 3D design, engineering, and entertainment software. Their industry-standard tools empower creators, architects, and engineers to imagine, design, and fabricate complex systems digitally, streamlining workflows from conceptual modeling to advanced manufacturing."><a class="partner-logo" href="https://autodesk.com"><img src="assets/partners/autodesk.svg" alt="Autodesk" loading="lazy" decoding="async"></a></li>
+                data-description="Autodesk is a global technology leader providing robust 3D design, engineering, and entertainment software. Their industry-standard tools empower creators, architects, and engineers to imagine, design, and fabricate complex systems digitally, streamlining workflows from conceptual modelling to advanced manufacturing."><a class="partner-logo" href="https://autodesk.com"><img src="assets/partners/autodesk.svg" alt="Autodesk" loading="lazy" decoding="async"></a></li>
             </ul>
           </section>
         </div>

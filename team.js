@@ -192,6 +192,7 @@ for (const trigger of teamRoster.querySelectorAll(".member-trigger")) {
     // Clear the previous member's photo first so it never shows under the new name while loading.
     profilePhoto.removeAttribute("src");
     profilePhoto.src = `assets/team-${member}.webp`;
+    profilePhoto.alt = `Portrait of ${profileName.textContent}`;
     profileDialog.showModal();
   });
 }
