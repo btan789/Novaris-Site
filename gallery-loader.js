@@ -1,4 +1,4 @@
-import { loadImages, showPageLoader } from "./page-loader.js";
+import { loadImages, showPageLoader } from "./page-loader.js?v=quicker-reveal";
 
 function previewRequest(image) {
   const sources = image.dataset.openingPreview;

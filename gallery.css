@@ -24,6 +24,25 @@
 .gallery-heading h1 span { color: var(--red); }
 .gallery-overview { display: grid; justify-items: end; gap: .75rem; }
 .gallery-overview .picker[hidden] { display: none; }
+.gallery-overview .picker::after { content: none; }
+.gallery-filter-control { position: relative; display: grid; }
+.gallery-filter-control::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 1.125rem;
+  width: .5rem;
+  height: .5rem;
+  box-sizing: border-box;
+  border: solid var(--text);
+  border-width: 0 1.5px 1.5px 0;
+  transform: translateY(-75%) rotate(45deg);
+  transition: transform 360ms var(--highlight-glide-easing);
+  pointer-events: none;
+}
+.gallery-filter-control:has(> select:open)::after { transform: translateY(-25%) rotate(225deg); }
+.gallery-filter-control #competition { padding-inline-end: 2.75rem; }
+.gallery-filter-control #competition::picker-icon { content: none; }
 .viewer-position { color: var(--muted); font-size: .9rem; }
 .photo-grid {
   display: grid;

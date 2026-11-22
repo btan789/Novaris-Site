@@ -4,38 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#040405">
-  <meta name="description" content="Meet Novaris, the Australian STEM Racing team, and explore NV-45 Redshift, winner of the 2026 World Finals Fastest Car award.">
+  <meta name="description" content="Novaris is a STEM Racing (formerly F1 in Schools) team from Trinity Grammar School, Melbourne. NV-45 Redshift won Fastest Car at the 2026 World Finals.">
   <!-- Link previews (Instagram, Messenger, LinkedIn, iMessage…). Images need full https:// addresses. -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://team-novaris.com/">
   <link rel="canonical" href="https://team-novaris.com/">
   <meta property="og:site_name" content="Novaris">
-  <meta property="og:title" content="Novaris | Australian STEM Racing Team, World Finals Fastest Car">
-  <meta property="og:description" content="Meet Novaris, the Australian STEM Racing team, and explore NV-45 Redshift, winner of the 2026 World Finals Fastest Car award.">
+  <meta property="og:title" content="Novaris STEM Racing | 2026 World Finals Fastest Car, Melbourne">
+  <meta property="og:description" content="Novaris is a STEM Racing (formerly F1 in Schools) team from Trinity Grammar School, Melbourne. NV-45 Redshift won Fastest Car at the 2026 World Finals.">
   <meta property="og:image" content="https://team-novaris.com/assets/share.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="The Novaris team raises the Fastest Car trophy on stage at the 2026 STEM Racing World Finals in Singapore.">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Novaris | Australian STEM Racing Team, World Finals Fastest Car</title>
+  <title>Novaris STEM Racing | 2026 World Finals Fastest Car, Melbourne</title>
   <script>
     document.documentElement.classList.add("is-site-loading");
+    // Safety net: never keep the page covered for long if the loader script fails.
     const siteLoadingTimeout = setTimeout(() => {
       if (!document.querySelector(".page-loader")?.hidden) return;
-      for (const photo of document.querySelectorAll("img[data-loading-src]")) {
-        photo.src = photo.dataset.loadingSrc;
-      }
       document.dispatchEvent(new Event("site:ready"));
-    }, 15000);
+    }, 5000);
     document.addEventListener("site:ready", () => {
       clearTimeout(siteLoadingTimeout);
       document.documentElement.classList.remove("is-site-loading", "is-site-revealing");
     }, { once: true });
   </script>
   <link rel="icon" href="assets/novaris.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/novaris.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="site.css?v=team-signatures">
+  <link rel="preload" href="assets/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/novaris.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css?v=world-finals-caption">
   <link rel="stylesheet" href="page-loader.css">
   <link rel="stylesheet" href="finish-line.css?v=footer-address">
   <link rel="stylesheet" href="partner-orbits.css?v=tier-colours">
@@ -45,8 +43,7 @@
   <script src="team.js?v=signatures" defer></script>
   <script src="achievements.js?v=photo-glide" type="module"></script>
   <script type="module" src="partner-orbits.js?v=tier-colours"></script>
-  <script type="module" src="home-loader.js"></script>
-  <noscript><style>img[data-loading-src] { display: none; }</style></noscript>
+  <script type="module" src="home-loader.js?v=quicker-reveal"></script>
   <!-- Structured data: tells search engines who the team is. Keep it in step with the visible page text. -->
   <script type="application/ld+json">
   {
@@ -57,6 +54,7 @@
         "@id": "https://team-novaris.com/#website",
         "url": "https://team-novaris.com/",
         "name": "Novaris",
+        "alternateName": "Novaris STEM Racing",
         "inLanguage": "en-AU",
         "publisher": {
           "@id": "https://team-novaris.com/#team"
@@ -66,6 +64,8 @@
         "@type": "SportsTeam",
         "@id": "https://team-novaris.com/#team",
         "name": "Novaris",
+        "alternateName": ["Team Novaris", "Novaris STEM Racing"],
+        "disambiguatingDescription": "Student STEM Racing (formerly F1 in Schools) team from Trinity Grammar School, Melbourne. Not affiliated with other organisations named Novaris.",
         "url": "https://team-novaris.com/",
         "sport": "STEM Racing (formerly F1 in Schools)",
         "description": "Novaris is a student engineering team from Trinity Grammar School in Kew, Melbourne, competing in STEM Racing. Its NV-45 Redshift won the Fastest Car award at the 2026 STEM Racing World Finals in Singapore, where Novaris placed 14th overall out of 91 teams. Novaris won the Development Class at the 2026 Australian National Finals.",
@@ -250,23 +250,23 @@
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <img class="stage" data-loading-src="assets/world-finals.webp" width="1920" height="1280" alt="The Novaris team raises the Fastest Car trophy on stage in Singapore, holding the Australian flag.">
-      <noscript><img class="stage" src="assets/world-finals.webp" width="1920" height="1280" fetchpriority="high" alt="The Novaris team raises the Fastest Car trophy on stage in Singapore, holding the Australian flag."></noscript>
+      <img class="stage" src="assets/world-finals.webp" width="1920" height="1280" fetchpriority="high" decoding="async" alt="The Novaris team raises the Fastest Car trophy on stage in Singapore, holding the Australian flag.">
       <div class="shade"></div>
       <div class="hero-content wrap">
         <div class="hero-copy">
           <h1 id="hero-title">NOVARIS</h1>
           <p class="hero-slogan">Pointing Forwards.</p>
-          <p class="intro">A student team from Kew, Melbourne. The fastest car at the 2026 STEM Racing World Finals.</p>
+          <p class="intro">A student STEM Racing team from Trinity Grammar School in Kew, Melbourne. The fastest car at the 2026 World Finals.</p>
           <a class="explore glass pill" href="#cars">Explore the cars</a>
         </div>
       </div>
-      <div class="caption glass pill"><span>Singapore</span><i></i>World Finals 2026</div>
+      <div class="caption glass pill">STEM Racing World Finals 2026, Singapore</div>
     </section>
     <section id="about" class="about wrap" aria-labelledby="about-title">
       <div class="about-copy">
         <h2 id="about-title">About Novaris<span>.</span></h2>
         <p>Novaris is a student engineering team from Trinity Grammar School in Kew, Melbourne, competing in STEM Racing (formerly F1 in Schools). Teams design, manufacture and race miniature CO₂-powered Formula 1-style cars, and present their engineering and enterprise work to judges. Our car, NV-45 Redshift, won the Fastest Car award at the 2026 STEM Racing World Finals in Singapore.</p>
+        <p>At the World Finals in October 2026, Redshift took the Fastest Car award with a time of 1.068 seconds, and Novaris placed 14th of 91 teams overall on 729.6 points (<a href="https://www.stemracing.com/aramco-stem-racing-world-finals-2026" rel="noopener">official World Finals results</a>). At the 2026 Australian National Finals, Novaris won the Development Class, taking the Knockout Racing and Grand Prix Racing titles and the award for Best Manufactured Car.</p>
       </div>
       <figure class="about-photo">
         <img src="assets/gallery/world-finals-flags-preview.webp"
@@ -291,10 +291,8 @@
           </div>
         </article>
         <article class="achievement-slide achievement-standing" aria-labelledby="worlds-standing" aria-roledescription="slide">
-          <img class="achievement-art" data-loading-src="assets/world-finals.webp" width="1920" height="1280"
+          <img class="achievement-art" src="assets/world-finals.webp" width="1920" height="1280"
             alt="The Novaris team on stage at the World Finals in Singapore." loading="lazy" decoding="async">
-          <noscript><img class="achievement-art" src="assets/world-finals.webp" width="1920" height="1280"
-            alt="The Novaris team on stage at the World Finals in Singapore." loading="lazy" decoding="async"></noscript>
           <div class="achievement-copy">
             <p class="eyebrow">2026 World Finals · Singapore</p>
             <h3 id="worlds-standing">14th overall</h3>
@@ -384,7 +382,7 @@
         <li class="member">
           <button class="member-trigger" type="button" data-member="lucas" aria-haspopup="dialog" aria-labelledby="lucas-name lucas-role" aria-describedby="lucas-intro">
             <img class="member-portrait" src="assets/cutout-lucas.webp" width="720" height="720" alt="" loading="lazy">
-            <img class="member-signature" src="assets/signatures/lucas.svg" alt="" loading="lazy">
+            <img class="member-signature" src="assets/signatures/lucas.svg?v=clear-ink" alt="" loading="lazy">
             <span class="member-preview">
               <span class="member-copy">
                 <strong class="member-name" id="lucas-name">Lucas <span class="member-surname">Bosco</span></strong>
@@ -398,7 +396,7 @@
         <li class="member">
           <button class="member-trigger" type="button" data-member="nathan" aria-haspopup="dialog" aria-labelledby="nathan-name nathan-role" aria-describedby="nathan-intro">
             <img class="member-portrait" src="assets/cutout-nathan.webp" width="720" height="720" alt="" loading="lazy">
-            <img class="member-signature" src="assets/signatures/nathan.svg" alt="" loading="lazy">
+            <img class="member-signature" src="assets/signatures/nathan.svg?v=clear-ink" alt="" loading="lazy">
             <span class="member-preview">
               <span class="member-copy">
                 <strong class="member-name" id="nathan-name">Nathan <span class="member-surname">Chen</span></strong>
@@ -412,7 +410,7 @@
         <li class="member">
           <button class="member-trigger" type="button" data-member="bowen" aria-haspopup="dialog" aria-labelledby="bowen-name bowen-role" aria-describedby="bowen-intro">
             <img class="member-portrait" src="assets/cutout-bowen.webp" width="720" height="720" alt="" loading="lazy">
-            <img class="member-signature" src="assets/signatures/bowen.svg" alt="" loading="lazy">
+            <img class="member-signature" src="assets/signatures/bowen.svg?v=small-screen-ink" alt="" loading="lazy">
             <span class="member-preview">
               <span class="member-copy">
                 <strong class="member-name" id="bowen-name">Bowen <span class="member-surname">Tan</span></strong>
@@ -448,8 +446,7 @@
           <img src="assets/gallery/pit-lane-thumb.webp" width="637" height="850" alt="" loading="lazy" decoding="async">
         </span>
         <span class="gallery-strip">
-          <img data-loading-src="assets/world-finals.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async">
-          <noscript><img src="assets/world-finals.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async"></noscript>
+          <img src="assets/world-finals.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async">
           <span>View all 42 photos</span>
         </span>
       </a>

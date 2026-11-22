@@ -1,5 +1,5 @@
 import { easeGlide, glideDuration, reducedMotion } from "./carousel-motion.js";
-import { revealGallery } from "./gallery-loader.js?v=page-loader";
+import { revealGallery } from "./gallery-loader.js?v=quicker-reveal";
 
 const grid = document.querySelector(".photo-grid");
 const allPhotos = Array.from(grid.querySelectorAll("a"));

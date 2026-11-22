@@ -1,18 +1,18 @@
 @font-face {
   font-family: Inter;
-  src: url("assets/InterVariable.woff2") format("woff2");
+  src: url("assets/InterVariable-latin.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Novaris;
-  src: url("assets/novaris.ttf") format("truetype");
+  src: url("assets/novaris.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Novaris Wordmark";
-  src: url("assets/novaris.ttf") format("truetype");
+  src: url("assets/novaris.woff2") format("woff2");
   font-display: swap;
   /* Center the capital letters, which extend 72% of an em above the baseline. */
   ascent-override: 86%;
@@ -303,8 +303,7 @@ h1 {
   --glass-tint: rgb(68 60 72 / .58);
   --glass-rim: rgb(247 240 255 / .30);
 }
-.caption { position: absolute; bottom: clamp(1.4rem, 3.8svh, 3.2rem); right: var(--gutter); display: flex; align-items: center; gap: .75rem; padding: .5rem .75rem; color: #e2e0e3; letter-spacing: .06em; }
-.caption i { display: block; width: 1.25rem; height: 1px; background: #acaaaf; }
+.caption { position: absolute; bottom: clamp(1.4rem, 3.8svh, 3.2rem); right: var(--gutter); padding: .5rem .75rem; color: #e2e0e3; letter-spacing: .06em; }
 .garage, .team { padding-top: clamp(3.5rem, 6vw, 6.5rem); }
 #cars:focus-visible { outline: none; }
 .garage-head { display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding-bottom: 1.75rem; }
@@ -666,10 +665,13 @@ nav:has(> a:is(:hover, :focus-visible)) > .nav-indicator,
   transform: scale(calc(1 + .06 * var(--member-highlight)));
   transition-property: transform;
 }
+.member-trigger[data-member="bowen"] {
+  --member-signature-height: clamp(1.9rem, 3.5vw, 2.9rem);
+}
 .member-signature {
   display: block;
-  width: min(85%, 8rem);
-  height: clamp(1rem, 3.5vw, 2.2rem);
+  width: min(100%, 10rem);
+  height: var(--member-signature-height, clamp(1.5rem, 5vw, 3rem));
   margin-top: .25rem;
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -738,26 +740,30 @@ nav:has(> a:is(:hover, :focus-visible)) > .nav-indicator,
   }
   .member-trigger {
     --member-copy-inset: clamp(.7rem, 1.45vw, 1.4rem);
-    --member-signature-height: clamp(1.5rem, 2.4vw, 2.2rem);
+    --member-signature-width: min(10rem, var(--lineup-side-width) - .5rem);
+    --member-signature-height: clamp(1.75rem, 3vw, 2.75rem);
     --member-signature-gap: .25rem;
   }
   .member-signature {
     position: absolute;
     top: calc(100% - 4.85rem + var(--member-signature-gap));
-    left: 50%;
-    width: min(82%, 8rem);
-    height: var(--member-signature-height);
+    left: 0;
+    width: auto;
+    height: auto;
+    max-width: var(--member-signature-width);
+    max-height: var(--member-signature-height);
     margin: 0;
-    transform: translateX(-50%);
-    transition: top 450ms var(--highlight-glide-easing), left 450ms var(--highlight-glide-easing),
-      transform 450ms var(--highlight-glide-easing), object-position 450ms var(--highlight-glide-easing);
+    /* Center the artwork itself at rest so it slides as one image. */
+    transform: translateX(calc(var(--member-target-width) / 2 - 50%));
+    transition-property: top, transform;
+    transition-duration: var(--highlight-glide-duration);
+    transition-timing-function: var(--highlight-glide-easing);
+    transition-delay: var(--lineup-shift-delay);
   }
-  .team-roster:not(.has-sliding-background) .member:has(.member-trigger:is(:hover, :focus-visible)) .member-signature,
-  .member.is-copy-visible .member-signature {
+  .member.is-highlighted .member-signature,
+  .team-roster:not(.has-sliding-background) .member:has(.member-trigger:is(:hover, :focus-visible)) .member-signature {
     top: calc(var(--member-copy-inset) + var(--member-name-height, 1.2em) + var(--member-signature-gap));
-    left: var(--member-copy-inset);
-    transform: translateX(0);
-    object-position: left center;
+    transform: translateX(var(--member-copy-inset));
   }
   .member-preview {
     --member-copy-visible: var(--member-highlight);
@@ -874,6 +880,8 @@ html:has(.profile-dialog[open]) { overflow: hidden; }
 }
 .about-copy { display: grid; gap: clamp(1rem, 2vw, 1.75rem); max-width: 46rem; }
 .about-copy p { font-size: clamp(1.03rem, 1.35vw, 1.3rem); line-height: 1.6; color: #e0dfe4; }
+.about-copy a { color: #fff; text-decoration: underline; text-decoration-color: rgb(255 255 255 / .45); text-underline-offset: .2em; }
+.about-copy a:hover { text-decoration-color: currentColor; }
 .about-photo img {
   display: block;
   width: 100%;

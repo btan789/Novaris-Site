@@ -19,11 +19,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>Gallery | Novaris</title>
   <link rel="icon" href="assets/novaris.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="site.css?v=launch">
+  <link rel="stylesheet" href="site.css?v=world-finals-caption">
   <link rel="stylesheet" href="page-loader.css">
-  <link rel="stylesheet" href="gallery.css?v=filter-layout">
+  <link rel="stylesheet" href="gallery.css?v=filter-chevron">
   <script src="starfield.js?v=page-loader" defer></script>
-  <script src="gallery.js?v=filter-status" type="module"></script>
+  <script src="gallery.js?v=quicker-reveal" type="module"></script>
   <noscript><style>.photo-grid img[data-opening-preview] { display: none; }</style></noscript>
   <!-- Structured data: tells search engines who the team is. Keep it in step with the visible page text. -->
   <script type="application/ld+json">
@@ -72,12 +72,14 @@
         <p id="gallery-summary" class="visually-hidden" role="status"></p>
         <div class="picker" hidden>
           <label for="competition">Filter photos</label>
-          <select id="competition" class="glass pill" aria-controls="gallery-grid">
-            <option value="">All photos</option>
-            <option value="world-finals-2026">2026 World Finals</option>
-            <option value="nationals-2026">2026 Nationals</option>
-            <option value="workshop">Workshop</option>
-          </select>
+          <div class="gallery-filter-control">
+            <select id="competition" class="glass pill" aria-controls="gallery-grid">
+              <option value="">All photos</option>
+              <option value="world-finals-2026">2026 World Finals</option>
+              <option value="nationals-2026">2026 Nationals</option>
+              <option value="workshop">Workshop</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>

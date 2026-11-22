@@ -46,7 +46,8 @@ export async function showPageLoader({ content, load, recover, beforeFade }) {
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const controller = new AbortController();
   const { signal } = controller;
-  const timeout = setTimeout(() => controller.abort(), 10000);
+  // Reveal the page after 4 s even if some opening assets are still loading.
+  const timeout = setTimeout(() => controller.abort(), 4000);
 
   function updateProgress(progress) {
     if (signal.aborted) return;
@@ -77,7 +78,7 @@ export async function showPageLoader({ content, load, recover, beforeFade }) {
       await logo.animate([
         { transform: "scale(1)", filter: "drop-shadow(0 0 0 rgb(255 255 255 / 0))" },
         { transform: "scale(1.12)", filter: "drop-shadow(0 0 20px rgb(255 255 255 / .75))" }
-      ], { delay: 110, duration: 480, easing: "cubic-bezier(.35, 0, .22, 1)", fill: "forwards" }).finished;
+      ], { duration: 200, easing: "cubic-bezier(.35, 0, .22, 1)", fill: "forwards" }).finished;
     }
   } catch {
     controller.abort();
@@ -87,7 +88,7 @@ export async function showPageLoader({ content, load, recover, beforeFade }) {
     try {
       beforeFade?.();
       await loader.animate([{ opacity: 1 }, { opacity: 0 }], {
-        duration: reducedMotion ? 150 : 640,
+        duration: reducedMotion ? 150 : 300,
         easing: "cubic-bezier(.42, 0, .2, 1)",
         fill: "forwards"
       }).finished;
