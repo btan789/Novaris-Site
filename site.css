@@ -596,6 +596,7 @@ nav:has(> a:is(:hover, :focus-visible)) > .nav-indicator,
 .nav-indicator:is(.is-positioning, .is-departing) { transition: none; }
 .bar[data-dock="side"] .nav-indicator { border-radius: var(--dock-cap-radius, var(--dock-inner-radius)); }
 .team { padding-bottom: clamp(3.5rem, 6vw, 6.5rem); }
+#team:focus-visible { outline: none; }
 .team-heading {
   display: flex;
   flex-wrap: wrap;
