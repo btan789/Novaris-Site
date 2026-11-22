@@ -1,0 +1,247 @@
+.finish-line {
+  margin-block: clamp(1.75rem, 3.8vw, 4.25rem) clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.finish-scene {
+  --car-anchor: 65%;
+  --car-width: clamp(12rem, 23%, 24rem);
+  --ground: 1.45rem;
+  position: relative;
+}
+
+.finish-slogan {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: calc(var(--ground) + 1rem);
+  inline-size: max-content;
+  max-inline-size: calc(var(--car-anchor) - 1.1 * var(--car-width) - 1rem);
+  color: var(--red);
+  font-size: clamp(1.85rem, 4.4vw, 4.65rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  text-shadow: 0 0 .55em rgb(239 68 89 / .24);
+}
+
+.finish-slogan span { display: block; }
+.finish-line.is-sequenced .finish-slogan[inert] { opacity: 0; }
+.finish-line.is-sequenced .finish-slogan span {
+  clip-path: inset(-.6em var(--scan-inset, 100%) -.6em 0);
+}
+.finish-line.is-sequenced .finish-slogan:not([inert])::after {
+  content: "";
+  position: absolute;
+  inset-block: -.12em;
+  inset-inline-start: var(--scan-offset, 0%);
+  inline-size: clamp(2px, .25vw, 4px);
+  border-radius: 999px;
+  translate: -50% 0;
+  background: linear-gradient(transparent, #ff647f 20%, #fff0f3 50%, #ff647f 80%, transparent);
+  box-shadow: 0 0 .3em rgb(255 56 90 / .85);
+  opacity: var(--scan-opacity, 0);
+  pointer-events: none;
+}
+
+.finish-track {
+  --beam-x: calc(var(--car-anchor) + var(--beam-shift, 0) * var(--car-width));
+  --signal: 0;
+  --roll-in: 0%;
+  --trail-strength: 0;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  height: clamp(8rem, 12vw, 12.5rem);
+  background: radial-gradient(ellipse at var(--beam-x) 88%, rgb(132 31 51 / .14), transparent 46%);
+  mask-image: linear-gradient(90deg, transparent, black 4%, black 93%, transparent);
+}
+.finish-line.is-sequenced .finish-track { --roll-in: 100%; }
+
+.finish-rail {
+  position: absolute;
+  inset: auto 0 var(--ground);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #49252e 12%, #963145 48%, #ff596d var(--beam-x), #713141 85%, transparent);
+}
+
+.finish-rail::before {
+  content: "";
+  position: absolute;
+  inset: -.95rem 0;
+  opacity: var(--signal);
+  background: radial-gradient(ellipse 24% 48% at var(--beam-x) 50%, #ff7a91, rgb(239 46 76 / .5) 32%, transparent 100%);
+}
+
+.finish-rail::after {
+  content: "";
+  position: absolute;
+  inset: .35rem 0 auto;
+  height: .3rem;
+  background: repeating-linear-gradient(90deg, #ae747d 0 1px, transparent 1px 22px);
+  mask-image: linear-gradient(90deg, transparent, rgb(0 0 0 / .32) 24%, black var(--beam-x), transparent 99%);
+}
+
+.finish-car-clip { position: absolute; }
+.finish-car {
+  position: absolute;
+  inset: auto auto var(--ground) var(--car-anchor);
+  width: var(--car-width);
+  aspect-ratio: 1185 / 270;
+  transform: translateX(calc(-28% + var(--roll-in)));
+}
+.finish-rear-edge {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: calc(100% * 1241 / 1185);
+  height: 100%;
+  opacity: calc(min(1, 1.8 * var(--trail-strength)) * var(--trail-remaining, 1));
+  filter: grayscale(.65) brightness(.78) contrast(1.1);
+  pointer-events: none;
+}
+.finish-trail {
+  --trail-width: 1.0875;
+  /* Extend the canvas over the car by 4% while keeping the tip in place. */
+  --trail-scale: calc(var(--trail-strength) + .04 / var(--trail-width));
+  --trail-bumper: calc(13% / var(--trail-width));
+  --trail-tuck: calc((var(--trail-strength) - 1) * 14% + (var(--trail-scale) - 1) * var(--trail-bumper));
+  /* Locate the bumper inside the stretched canvas so the fade follows the join. */
+  --trail-contact: min(100%, calc((var(--trail-bumper) + (1 - var(--trail-strength)) * 14%) /
+    var(--trail-scale)));
+  --trail-visible: calc(100% - var(--trail-contact));
+  position: absolute;
+  inset: -11% auto auto 87%;
+  width: calc(var(--trail-width) * 100%);
+  height: 122%;
+  transform-origin: var(--trail-bumper) center;
+  transform: scaleX(var(--trail-remaining, 1)) translateX(var(--trail-tuck)) scaleX(var(--trail-scale));
+  opacity: calc(.8 * var(--trail-strength) * var(--trail-remaining, 1));
+  filter: blur(clamp(1px, .18vw, 3px)) brightness(.90);
+  mask-image: linear-gradient(90deg,
+    transparent,
+    rgb(0 0 0 / .36) calc(.45 * var(--trail-contact)),
+    black calc(.9 * var(--trail-contact)),
+    black calc(var(--trail-contact) + .09 * var(--trail-visible)),
+    rgb(0 0 0 / .85) calc(var(--trail-contact) + .36 * var(--trail-visible)),
+    rgb(0 0 0 / .34) calc(var(--trail-contact) + .70 * var(--trail-visible)),
+    transparent 100%);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .finish-trail { --trail-width: .9; }
+}
+
+.finish-body {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  filter: drop-shadow(0 -1px 1px rgb(255 132 150 / .65));
+}
+.finish-body img {
+  position: absolute;
+  /* The opaque body occupies (136, 393) to (1321, 663) in the original side render. */
+  width: 125.316%;
+  max-width: none;
+  height: auto;
+  left: -11.477%;
+  top: -145.556%;
+  clip-path: url("#finish-car-outline");
+  filter: grayscale(.65) brightness(.78) contrast(1.1);
+}
+
+.finish-gate {
+  position: absolute;
+  left: var(--beam-x);
+  bottom: calc(var(--ground) - .22rem);
+  width: 1px;
+  height: clamp(5.25rem, 7.7vw, 8rem);
+  background: linear-gradient(transparent, #dd435a 18%, #ff8c98 95%);
+}
+.finish-gate::before, .finish-gate::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.finish-gate::before {
+  inset: 0 -2.2rem;
+  opacity: var(--signal);
+  background: linear-gradient(90deg, transparent, rgb(255 42 79 / .48) 43%, #fff1f4 49% 51%, rgb(255 42 79 / .48) 57%, transparent);
+  mask-image: linear-gradient(transparent, black 20%);
+}
+.finish-gate::after {
+  left: -5px;
+  bottom: 0;
+  width: 11px;
+  height: 4px;
+  border-radius: 3px;
+  background: #ff8998;
+  box-shadow: 0 0 12px #de344b;
+}
+.finish-gate i {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ff94a4;
+  box-shadow: 0 0 9px #d82e4d;
+}
+
+.finish-contact {
+  display: flex;
+  gap: 1.5rem;
+  align-items: end;
+  justify-content: space-between;
+  padding: clamp(1rem, 2.4vw, 2.5rem) 0 0;
+}
+.finish-line.is-sequenced .finish-contact {
+  opacity: var(--social-opacity, 0);
+  transform: translateY(var(--social-offset, .6rem));
+}
+.finish-line.is-sequenced .finish-contact[data-pending] { pointer-events: none; }
+/* Keyboard focus reveals the links straight away, without waiting for the car. */
+.finish-line.is-sequenced .finish-contact:focus-within {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .finish-line.is-sequenced .finish-contact {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+.finish-contact h2 {
+  display: grid;
+  gap: .5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: var(--muted);
+}
+.finish-contact h2 span {
+  font: 400 clamp(2rem, 4.5vw, 4.65rem)/1 "Novaris Wordmark", Inter, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: var(--text);
+}
+.finish-brand { display: grid; gap: .65rem; }
+.footer-copyright, .finish-address { color: var(--muted); font-size: .8125rem; line-height: 1.45; }
+.finish-address { font-style: normal; }
+.finish-contact .social-links { justify-content: end; gap: .5rem; }
+.finish-contact .footer-link { min-height: 2.75rem; }
+
+@media (max-width: 680px) {
+  .finish-scene { --car-anchor: 64%; --car-width: 53%; }
+  .finish-track { height: clamp(7.75rem, 21vw, 9.25rem); }
+  .finish-slogan {
+    max-inline-size: calc(38% - .65rem);
+    inset-block: .6rem auto;
+    font-size: clamp(.95rem, 5.1vw, 1.35rem);
+    line-height: 1.1;
+  }
+  .finish-contact { flex-direction: column; align-items: center; text-align: center; gap: 1.25rem; }
+  .finish-contact h2 span { font-size: clamp(2rem, 10vw, 3.5rem); }
+  .finish-contact .social-links { justify-content: center; gap: .25rem; }
+  .finish-contact .footer-link { padding-inline: .75rem; }
+}

@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040405">
+  <meta name="description" content="Meet Novaris, the Australian STEM Racing team, and explore NV-45 Redshift, winner of the 2026 World Finals Fastest Car award.">
+  <!-- Link previews (Instagram, Messenger, LinkedIn, iMessage…). Images need full https:// addresses. -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://team-novaris.com/">
+  <link rel="canonical" href="https://team-novaris.com/">
+  <meta property="og:site_name" content="Novaris">
+  <meta property="og:title" content="Novaris | Australian STEM Racing Team, World Finals Fastest Car">
+  <meta property="og:description" content="Meet Novaris, the Australian STEM Racing team, and explore NV-45 Redshift, winner of the 2026 World Finals Fastest Car award.">
+  <meta property="og:image" content="https://team-novaris.com/assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Novaris team raises the Fastest Car trophy on stage at the 2026 STEM Racing World Finals in Singapore.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Novaris | Australian STEM Racing Team, World Finals Fastest Car</title>
+  <script>
+    document.documentElement.classList.add("is-site-loading");
+    const siteLoadingTimeout = setTimeout(() => {
+      if (!document.querySelector(".page-loader")?.hidden) return;
+      for (const photo of document.querySelectorAll("img[data-loading-src]")) {
+        photo.src = photo.dataset.loadingSrc;
+      }
+      document.dispatchEvent(new Event("site:ready"));
+    }, 15000);
+    document.addEventListener("site:ready", () => {
+      clearTimeout(siteLoadingTimeout);
+      document.documentElement.classList.remove("is-site-loading", "is-site-revealing");
+    }, { once: true });
+  </script>
+  <link rel="icon" href="assets/novaris.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/novaris.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="site.css?v=footer-contact">
+  <link rel="stylesheet" href="page-loader.css">
+  <link rel="stylesheet" href="finish-line.css?v=footer-address">
+  <link rel="stylesheet" href="partner-orbits.css?v=tier-colours">
+  <script src="starfield.js?v=page-loader" defer></script>
+  <script src="finish-line.js?v=longer-braking" defer></script>
+  <script src="cars.js?v=redshift-wordmark" defer></script>
+  <script src="team.js" defer></script>
+  <script src="achievements.js?v=photo-glide" type="module"></script>
+  <script type="module" src="partner-orbits.js?v=tier-colours"></script>
+  <script type="module" src="home-loader.js"></script>
+  <noscript><style>img[data-loading-src] { display: none; }</style></noscript>
+  <!-- Structured data: tells search engines who the team is. Keep it in step with the visible page text. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://team-novaris.com/#website",
+        "url": "https://team-novaris.com/",
+        "name": "Novaris",
+        "inLanguage": "en-AU",
+        "publisher": {
+          "@id": "https://team-novaris.com/#team"
+        }
+      },
+      {
+        "@type": "SportsTeam",
+        "@id": "https://team-novaris.com/#team",
+        "name": "Novaris",
+        "url": "https://team-novaris.com/",
+        "sport": "STEM Racing (formerly F1 in Schools)",
+        "description": "Novaris is a student engineering team from Trinity Grammar School in Kew, Melbourne, competing in STEM Racing. Its NV-45 Redshift won the Fastest Car award at the 2026 STEM Racing World Finals in Singapore, where Novaris placed 14th overall out of 91 teams. Novaris won the Development Class at the 2026 Australian National Finals.",
+        "logo": "https://team-novaris.com/assets/novaris.svg",
+        "image": "https://team-novaris.com/assets/share.jpg",
+        "email": "info@team-novaris.com",
+        "location": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kew",
+            "addressRegion": "VIC",
+            "addressCountry": "AU"
+          }
+        },
+        "parentOrganization": {
+          "@type": "School",
+          "name": "Trinity Grammar School",
+          "url": "https://trinity.vic.edu.au"
+        },
+        "award": [
+          "Fastest Car, 2026 STEM Racing World Finals",
+          "2026 Australian National Champions, Development Class",
+          "Knockout Racing Champions, 2026 Australian National Finals",
+          "Grand Prix Racing Champions, 2026 Australian National Finals",
+          "Best Manufactured Car, 2026 Australian National Finals"
+        ],
+        "member": [
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Team Principal",
+            "member": {
+              "@type": "Person",
+              "name": "Christian Natoli"
+            }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Enterprise Director",
+            "member": {
+              "@type": "Person",
+              "name": "Lucas Bosco"
+            }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Graphic Designer",
+            "member": {
+              "@type": "Person",
+              "name": "Nathan Chen"
+            }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Engineering Director",
+            "member": {
+              "@type": "Person",
+              "name": "Bowen Tan"
+            }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Technical Engineer",
+            "member": {
+              "@type": "Person",
+              "name": "Tony Shen"
+            }
+          }
+        ],
+        "sponsor": [
+          {
+            "@type": "Organization",
+            "name": "TD Investments"
+          },
+          {
+            "@type": "Organization",
+            "name": "RMIT University",
+            "url": "https://rmit.edu.au"
+          },
+          {
+            "@type": "Organization",
+            "name": "ANMFC",
+            "url": "https://anmfc.com"
+          },
+          {
+            "@type": "Organization",
+            "name": "Trinity Grammar School",
+            "url": "https://trinity.vic.edu.au"
+          },
+          {
+            "@type": "Organization",
+            "name": "REA Foundation",
+            "url": "https://rea.org.au"
+          },
+          {
+            "@type": "Organization",
+            "name": "S-Trend",
+            "url": "https://www.s-trend.com.au"
+          },
+          {
+            "@type": "Organization",
+            "name": "Alfa Romeo",
+            "url": "https://alfaromeo.com.au"
+          },
+          {
+            "@type": "Organization",
+            "name": "Jaguar",
+            "url": "https://jaguar.com"
+          },
+          {
+            "@type": "Organization",
+            "name": "Chrysler",
+            "url": "https://chrysler.com.au"
+          },
+          {
+            "@type": "Organization",
+            "name": "Rocket Digital",
+            "url": "https://rocketdigital.com.au"
+          },
+          {
+            "@type": "Organization",
+            "name": "FastPreci",
+            "url": "https://www.fastpreci.com"
+          },
+          {
+            "@type": "Organization",
+            "name": "PCBWay",
+            "url": "https://www.pcbway.com"
+          },
+          {
+            "@type": "Organization",
+            "name": "Objective3D",
+            "url": "https://objective3d.com.au"
+          },
+          {
+            "@type": "Organization",
+            "name": "Ansys",
+            "url": "https://ansys.synopsys.com"
+          },
+          {
+            "@type": "Organization",
+            "name": "Autodesk",
+            "url": "https://autodesk.com"
+          }
+        ],
+        "sameAs": [
+          "https://instagram.com/novaris.tgs",
+          "https://tiktok.com/@novaris.tgs"
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body id="top">
+  <canvas class="starfield" aria-hidden="true"></canvas>
+  <div class="page-loader" hidden>
+    <canvas class="starfield" aria-hidden="true"></canvas>
+    <div class="page-loader-content">
+      <svg class="page-loader-logo" viewBox="0 0 130.29 130.29" aria-hidden="true">
+        <circle class="page-loader-track" cx="65.15" cy="65.15" r="37.67"/>
+        <circle class="page-loader-fill" cx="65.15" cy="65.15" r="37.67" pathLength="100" transform="rotate(-90 65.15 65.15)"/>
+        <image href="assets/novaris-mark.svg" width="130.29" height="130.29"/>
+      </svg>
+      <p class="page-loader-percent" role="progressbar" aria-label="Loading Novaris" aria-valuenow="0">0%</p>
+    </div>
+  </div>
+  <a class="skip" href="#cars">Skip to competition cars</a>
+  <header>
+    <div class="bar wrap is-introducing">
+      <span class="bar-surface glass pill" aria-hidden="true"></span>
+      <a class="brand" href="#top" aria-label="Novaris home" aria-current="location"><img src="assets/novaris.svg" width="34" height="34" alt=""><span class="bar-label">NOVARIS</span></a>
+      <nav aria-label="Main navigation">
+        <span class="nav-indicator" aria-hidden="true"></span>
+        <a href="#achievements"><span class="bar-label">Awards</span></a>
+        <a href="#cars"><span class="bar-label">Cars</span></a>
+        <a href="#team"><span class="bar-label">Team</span></a>
+        <a href="#gallery"><span class="bar-label">Gallery</span></a>
+        <a href="#partners"><span class="bar-label">Partners</span></a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="stage" data-loading-src="assets/world-finals.webp" width="1920" height="1280" alt="The Novaris team raises the Fastest Car trophy on stage in Singapore, holding the Australian flag.">
+      <noscript><img class="stage" src="assets/world-finals.webp" width="1920" height="1280" fetchpriority="high" alt="The Novaris team raises the Fastest Car trophy on stage in Singapore, holding the Australian flag."></noscript>
+      <div class="shade"></div>
+      <div class="hero-content wrap">
+        <div class="hero-copy">
+          <h1 id="hero-title">NOVARIS</h1>
+          <p class="hero-slogan">Pointing Forwards.</p>
+          <p class="intro">A student team from Kew, Melbourne. The fastest car at the 2026 STEM Racing World Finals.</p>
+          <a class="explore glass pill" href="#cars">Explore the cars</a>
+        </div>
+      </div>
+      <div class="caption glass pill"><span>Singapore</span><i></i>World Finals 2026</div>
+    </section>
+    <section id="about" class="about wrap" aria-labelledby="about-title">
+      <div class="about-copy">
+        <h2 id="about-title">About Novaris<span>.</span></h2>
+        <p>Novaris is a student engineering team from Trinity Grammar School in Kew, Melbourne, competing in STEM Racing (formerly F1 in Schools). Teams design, manufacture and race miniature CO₂-powered Formula 1-style cars, and present their engineering and enterprise work to judges. Our car, NV-45 Redshift, won the Fastest Car award at the 2026 STEM Racing World Finals in Singapore.</p>
+      </div>
+      <figure class="about-photo">
+        <img src="assets/gallery/world-finals-flags-preview.webp"
+          srcset="assets/gallery/world-finals-flags-thumb.webp 800w, assets/gallery/world-finals-flags-preview.webp 1600w"
+          sizes="auto, (max-width: 900px) 89vw, min(50vw, 59rem)" width="1600" height="1067"
+          alt="World Finals teams holding their national flags on both sides of the race track." loading="lazy" decoding="async">
+      </figure>
+    </section>
+    <section id="achievements" class="achievements" aria-labelledby="achievements-title" aria-roledescription="carousel" tabindex="-1">
+      <h2 id="achievements-title" class="wrap">Achievements<span>.</span></h2>
+      <div class="achievement-track" id="achievement-slides" tabindex="0" aria-label="Competition results">
+        <article class="achievement-slide achievement-worlds" aria-labelledby="worlds-result" aria-roledescription="slide">
+          <img class="achievement-art" src="assets/gallery/garage-team-preview.webp"
+            srcset="assets/gallery/garage-team-thumb.webp 960w, assets/gallery/garage-team-preview.webp 1600w"
+            sizes="min(87vw, 100rem)" width="1600" height="834"
+            alt="Novaris holding the Fastest Car trophy and their model cars outside the Mercedes garage in Singapore." loading="lazy" decoding="async">
+          <div class="achievement-copy">
+            <p class="eyebrow">2026 World Finals · Singapore</p>
+            <h3 id="worlds-result">Fastest Car</h3>
+            <p class="achievement-detail">Presented by the Mercedes-AMG PETRONAS F1 Team</p>
+            <p class="achievement-description visually-hidden">Our car, NV-45 Redshift, won the Fastest Car award at the 2026 STEM Racing World Finals in Singapore, competing against 91 teams</p>
+          </div>
+        </article>
+        <article class="achievement-slide achievement-standing" aria-labelledby="worlds-standing" aria-roledescription="slide">
+          <img class="achievement-art" data-loading-src="assets/world-finals.webp" width="1920" height="1280"
+            alt="The Novaris team on stage at the World Finals in Singapore." loading="lazy" decoding="async">
+          <noscript><img class="achievement-art" src="assets/world-finals.webp" width="1920" height="1280"
+            alt="The Novaris team on stage at the World Finals in Singapore." loading="lazy" decoding="async"></noscript>
+          <div class="achievement-copy">
+            <p class="eyebrow">2026 World Finals · Singapore</p>
+            <h3 id="worlds-standing">14th overall</h3>
+            <p class="achievement-detail">Out of 91 teams</p>
+            <p class="achievement-description visually-hidden">Novaris placed 14th of 91 teams in the overall standings at the 2026 STEM Racing World Finals, which combine racing results with the judges’ scores for engineering and enterprise</p>
+          </div>
+        </article>
+        <article class="achievement-slide achievement-nationals" aria-labelledby="nationals-result" aria-roledescription="slide">
+          <img class="achievement-art" src="assets/gallery/awards-day3-160-preview.webp"
+            srcset="assets/gallery/awards-day3-160-thumb.webp 800w, assets/gallery/awards-day3-160-preview.webp 1600w"
+            sizes="min(87vw, 100rem)" width="1600" height="1067"
+            alt="Novaris on stage with their Australian National Champions certificate for the 2026 Development Class." loading="lazy" decoding="async">
+          <div class="achievement-copy">
+            <p class="eyebrow">2026 Australian National Finals · Development Class</p>
+            <h3 id="nationals-result">Australian National Champions</h3>
+            <ul class="achievement-awards">
+              <li>Knockout Racing Champions</li>
+              <li>Grand Prix Racing Champions</li>
+              <li>Best Manufactured Car</li>
+            </ul>
+            <p class="achievement-description visually-hidden">Novaris won the Development Class at the 2026 STEM Racing Australian National Finals, taking both racing titles and the award for the best manufactured car</p>
+          </div>
+        </article>
+      </div>
+      <div class="achievement-controls" aria-label="Slideshow controls" role="group" hidden>
+        <button class="achievement-arrow glass pill" type="button" data-step="-1" aria-label="Previous achievement" aria-controls="achievement-slides"><span aria-hidden="true">‹</span></button>
+        <div class="achievement-dots" aria-label="Select an achievement" role="group"></div>
+        <div class="achievement-actions">
+          <button class="achievement-arrow glass pill" type="button" data-step="1" aria-label="Next achievement" aria-controls="achievement-slides"><span aria-hidden="true">›</span></button>
+          <button class="achievement-playback glass pill" type="button" aria-label="Pause slideshow" aria-controls="achievement-slides"><span aria-hidden="true"></span></button>
+        </div>
+      </div>
+      <p class="achievement-status" aria-live="polite" aria-atomic="true"></p>
+    </section>
+    <section id="cars" class="garage wrap" aria-labelledby="cars-title" tabindex="-1">
+      <div class="garage-head">
+        <h2 id="cars-title">Competition cars<span>.</span></h2>
+        <div class="picker">
+          <label for="competition">Competition</label>
+          <select id="competition" class="glass pill"><option value="world-finals-2026">2026 World Finals</option></select>
+        </div>
+      </div>
+      <article class="car glass" aria-labelledby="car-name">
+        <div class="car-film-shade" aria-hidden="true"></div>
+        <div class="car-copy">
+          <p id="car-code">NV-45</p>
+          <h3 id="car-name"><img class="car-wordmark" src="assets/redshift-wordmark.svg?v=spacing" width="534" height="79" alt="Redshift"></h3>
+          <p id="car-summary">Winner of the Fastest Car award at the 2026 STEM Racing World Finals in Singapore</p>
+        </div>
+        <figure>
+          <div class="car-render">
+            <div class="car-still">
+              <span class="car-silhouette car-silhouette--far" aria-hidden="true"></span>
+              <span class="car-silhouette car-silhouette--middle" aria-hidden="true"></span>
+              <span class="car-silhouette car-silhouette--near" aria-hidden="true"></span>
+              <img id="car-image" src="assets/redshift-side.webp" width="1485" height="1050" alt="Side profile of Redshift, showing its low nose and raised rear wing." loading="lazy">
+            </div>
+          </div>
+        </figure>
+        <div class="car-film">
+          <video id="car-reveal" muted playsinline preload="auto" aria-label="Redshift car reveal" aria-hidden="true"></video>
+          <canvas class="car-film-frame" aria-hidden="true" hidden></canvas>
+        </div>
+        <span class="car-reveal-timer playback-timer-fill" aria-hidden="true"></span>
+      </article>
+    </section>
+    <section id="team" class="team wrap" aria-labelledby="team-title" tabindex="-1">
+      <div class="team-heading">
+        <h2 id="team-title">The team<span>.</span></h2>
+        <p>Select a team member to open their profile</p>
+      </div>
+      <ul class="team-roster glass">
+        <li class="member">
+          <button class="member-trigger" type="button" data-member="christian" aria-haspopup="dialog" aria-labelledby="christian-name christian-role" aria-describedby="christian-intro">
+            <img class="member-portrait" src="assets/cutout-christian.webp" width="720" height="720" alt="" loading="lazy">
+            <span class="member-preview">
+              <span class="member-copy">
+                <strong class="member-name" id="christian-name">Christian <span class="member-surname">Natoli</span></strong>
+                <span class="member-role" id="christian-role">Team Principal</span>
+                <span class="member-intro" id="christian-intro">Coordinates Novaris across the competition.</span>
+              </span>
+            </span>
+          </button>
+          <p class="member-bio visually-hidden" id="christian-bio" data-division="Enterprise">Christian coordinates Novaris’s work and brings teammates together to solve problems. As Team Principal, he helps turn ambitious ideas into plans the team can act on.</p>
+        </li>
+        <li class="member">
+          <button class="member-trigger" type="button" data-member="lucas" aria-haspopup="dialog" aria-labelledby="lucas-name lucas-role" aria-describedby="lucas-intro">
+            <img class="member-portrait" src="assets/cutout-lucas.webp" width="720" height="720" alt="" loading="lazy">
+            <span class="member-preview">
+              <span class="member-copy">
+                <strong class="member-name" id="lucas-name">Lucas <span class="member-surname">Bosco</span></strong>
+                <span class="member-role" id="lucas-role">Enterprise Director</span>
+                <span class="member-intro" id="lucas-intro">Leads partnerships and project coordination.</span>
+              </span>
+            </span>
+          </button>
+          <p class="member-bio visually-hidden" id="lucas-bio" data-division="Enterprise">Lucas oversees the business side of Novaris. He coordinates projects, manages partnerships and helps communicate the team’s work to partners and the wider community.</p>
+        </li>
+        <li class="member">
+          <button class="member-trigger" type="button" data-member="nathan" aria-haspopup="dialog" aria-labelledby="nathan-name nathan-role" aria-describedby="nathan-intro">
+            <img class="member-portrait" src="assets/cutout-nathan.webp" width="720" height="720" alt="" loading="lazy">
+            <span class="member-preview">
+              <span class="member-copy">
+                <strong class="member-name" id="nathan-name">Nathan <span class="member-surname">Chen</span></strong>
+                <span class="member-role" id="nathan-role">Graphic Designer</span>
+                <span class="member-intro" id="nathan-intro">Shapes the team’s graphics and visual identity.</span>
+              </span>
+            </span>
+          </button>
+          <p class="member-bio visually-hidden" id="nathan-bio" data-division="Enterprise">Nathan develops Novaris’s visual identity and brings it to life through the team’s graphics. He focuses on giving the team a consistent, professional look throughout the competition.</p>
+        </li>
+        <li class="member">
+          <button class="member-trigger" type="button" data-member="bowen" aria-haspopup="dialog" aria-labelledby="bowen-name bowen-role" aria-describedby="bowen-intro">
+            <img class="member-portrait" src="assets/cutout-bowen.webp" width="720" height="720" alt="" loading="lazy">
+            <span class="member-preview">
+              <span class="member-copy">
+                <strong class="member-name" id="bowen-name">Bowen <span class="member-surname">Tan</span></strong>
+                <span class="member-role" id="bowen-role">Engineering Director</span>
+                <span class="member-intro" id="bowen-intro">Guides the car’s technical development.</span>
+              </span>
+            </span>
+          </button>
+          <p class="member-bio visually-hidden" id="bowen-bio" data-division="Engineering">Bowen leads the team’s technical development and works through the design decisions that affect how the car performs. Inspired by Formula 1, he explores new solutions to engineering problems and studies high-performance design.</p>
+        </li>
+        <li class="member">
+          <button class="member-trigger" type="button" data-member="tony" aria-haspopup="dialog" aria-labelledby="tony-name tony-role" aria-describedby="tony-intro">
+            <img class="member-portrait" src="assets/cutout-tony.webp" width="720" height="720" alt="" loading="lazy">
+            <span class="member-preview">
+              <span class="member-copy">
+                <strong class="member-name" id="tony-name">Tony <span class="member-surname">Shen</span></strong>
+                <span class="member-role" id="tony-role">Technical Engineer</span>
+                <span class="member-intro" id="tony-intro">Refines the car’s CAD models for manufacture.</span>
+              </span>
+            </span>
+          </button>
+          <p class="member-bio visually-hidden" id="tony-bio" data-division="Engineering">Tony develops digital models of the racing car in CAD. He works with the engineering team to refine the car’s geometry and turn design ideas into models ready for manufacture.</p>
+        </li>
+      </ul>
+    </section>
+    <section id="gallery" class="wrap gallery-section" aria-labelledby="gallery-title" tabindex="-1">
+      <h2 id="gallery-title">Gallery<span>.</span></h2>
+      <a class="gallery-preview" href="gallery.html">
+        <span class="gallery-triptych">
+          <img src="assets/gallery/garage-team-thumb.webp" width="960" height="501" alt="" loading="lazy" decoding="async">
+          <img src="assets/gallery/model-inspection-thumb.webp" width="567" height="850" alt="" loading="lazy" decoding="async">
+          <img src="assets/gallery/pit-lane-thumb.webp" width="637" height="850" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="gallery-strip">
+          <img data-loading-src="assets/world-finals.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async">
+          <noscript><img src="assets/world-finals.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async"></noscript>
+          <span>View all 42 photos</span>
+        </span>
+      </a>
+    </section>
+    <section id="partners" class="wrap footer-partners" aria-labelledby="partners-title" tabindex="-1">
+      <div class="footer-heading">
+        <h2 id="partners-title">Partners<span>.</span></h2>
+        <a class="footer-link glass pill" href="mailto:partnerships@team-novaris.com">Partnership enquiries</a>
+      </div>
+      <div class="solar-system">
+        <svg class="planet-projection" width="0" height="0" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="curve-partner-mark" x="0" y="0" width="1" height="1" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+              <feImage href="assets/planet-curvature.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="curvature"/>
+              <feDisplacementMap in="SourceGraphic" in2="curvature" scale=".23" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+        </svg>
+        <div class="solar-map" id="partner-orbits">
+          <div class="solar-core" aria-hidden="true">
+            <img src="assets/novaris.svg" width="96" height="96" alt="">
+            <span>NOVARIS</span>
+          </div>
+          <section class="partner-tier" data-tier="title" aria-labelledby="title-partners">
+            <h3 id="title-partners">Title Partners</h3>
+            <ul class="partner-grid partner-grid--title">
+              <li style="--planet-accent: #d4af35"><span class="partner-logo"><img src="assets/partners/tdinvestments.svg" alt="TD Investments" loading="lazy" decoding="async"></span></li>
+              <li style="--planet-accent: #e32e26"
+                data-description="RMIT University is an international university of technology, design, and enterprise, recognized for practical education and impactful research. By bridging academic excellence with real-world industry collaboration, RMIT empowers students and partners to drive innovation, solve complex technical challenges, and shape future-ready industries."><a class="partner-logo" href="https://rmit.edu.au"><img src="assets/partners/rmit.svg" alt="RMIT University" loading="lazy" decoding="async"></a></li>
+            </ul>
+          </section>
+          <section class="partner-tier" data-tier="principal" aria-labelledby="principal-partners">
+            <h3 id="principal-partners">Principal Partners</h3>
+            <ul class="partner-grid partner-grid--principal">
+              <li style="--planet-accent: #104547"
+                data-description="ANMFC (Australian Nano-Manufacture Future Challenges) empowers young Australians to build advanced, future-ready manufacturing and technical skills. They connect young people with real challenges through design, digital fabrication, materials and hands-on making, bridging education and advanced engineering to foster the next generation of innovators."><a class="partner-logo" href="https://anmfc.com"><img src="assets/partners/anmfc.svg" alt="ANMFC" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #ebe9e1"
+                data-description="Trinity Grammar School is a leading educational institution committed to fostering holistic student development, critical thinking, and technical capability. Through robust curricular and co-curricular STEM initiatives, Trinity encourages young minds to explore complex problem-solving and hands-on engineering challenges."><a class="partner-logo" href="https://trinity.vic.edu.au"><img src="assets/partners/trinity.svg" alt="Trinity Grammar School" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #0962ab"
+                data-description="The REA Foundation facilitates transformative STEM career education programs, linking schools, industry, TAFE and universities to fundamentally shift student and teacher capabilities. By engaging young people in authentic, project-based learning, REA inspires students to take up STEM  career pathways after school."><a class="partner-logo" href="https://rea.org.au"><img src="assets/partners/rea.svg" alt="REA Foundation" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #70c05f"
+                data-description="S-Trend creates exceptional apparel tailored for athletes and organizations. Leveraging digital 3D simulation technology, sustainable materials, and advanced technical fabrications, S-Trend delivers durable, professional-grade kits designed to perform under demanding conditions."><a class="partner-logo" href="https://www.s-trend.com.au"><img src="assets/partners/strend.svg" alt="S-Trend" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #294a85"
+                data-description="Alfa Romeo is a historic Italian automotive manufacturer renowned for its rich racing heritage, distinctive design philosophy, and high-performance engineering. Blending Italian passion with advanced automotive craftsmanship, the brand symbolizes speed, agility, and a relentless pursuit of driving excellence."><a class="partner-logo" href="https://alfaromeo.com.au">
+                <img src="assets/partners/alfaromeowhite.svg" alt="Alfa Romeo" loading="lazy" decoding="async">
+                <img class="partner-colour" src="assets/partners/alfaromeo.svg" alt="" loading="lazy" decoding="async">
+              </a></li>
+              <li style="--planet-accent: #e0e0e0"
+                data-description="Jaguar is a globally celebrated luxury automotive brand famous for its iconic sports cars, elegance, and cutting-edge engineering. Rooted in a distinguished motorsport history, Jaguar combines striking design with thrilling performance and advanced technological innovation."><a class="partner-logo" href="https://jaguar.com"><img src="assets/partners/jaguar.svg" alt="Jaguar" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #b5b5b5"
+                data-description="Chrysler is an iconic automotive brand recognized for engineering dependable, comfortable, and feature-rich vehicles. With a long-standing history of American automotive innovation, Chrysler focuses on practical performance, passenger comfort, and progressive design solutions."><a class="partner-logo" href="https://chrysler.com.au">
+                <img src="assets/partners/chryslerwhite.svg" alt="Chrysler" loading="lazy" decoding="async">
+                <img class="partner-colour" src="assets/partners/chrysler.svg" alt="" loading="lazy" decoding="async">
+              </a></li>
+              <li style="--planet-accent: #eb312a"
+                data-description="Rocket Digital specialises in high quality, large format digital printing. They&#x27;re not just printers, they&#x27;re partners, striving to exceed excpectations every time. Rocket Digital take pride in their work and don&#x27;t compromise on quality. Passion and experience combine with the latest technology to deliver true innovation."><a class="partner-logo" href="https://rocketdigital.com.au">
+                <img src="assets/partners/rocketdigitalwhite.svg" alt="Rocket Digital" loading="lazy" decoding="async">
+                <img class="partner-colour" src="assets/partners/rocketdigital.svg" alt="" loading="lazy" decoding="async">
+              </a></li>
+            </ul>
+          </section>
+          <section class="partner-tier" data-tier="technical" aria-labelledby="technical-partners">
+            <h3 id="technical-partners">Technical Partners</h3>
+            <ul class="partner-grid partner-grid--technical">
+              <li style="--planet-accent: #266ab4"
+                data-description="FastPreci is an engineering-oriented custom manufacturing partner specializing in precision CNC machining for prototypes and production parts. We help engineers and procurement teams turn designs into reliable, manufacturable components through responsive engineering support, practical DFM feedback, consistent quality control, and flexible production capabilities. From complex prototypes to repeat production, FastPreci supports customers with clear communication and dependable execution."><a class="partner-logo" href="https://www.fastpreci.com"><img src="assets/partners/fastpreci.svg" alt="FastPreci" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #208943"
+                data-description="PCBWay is a premier advanced manufacturing partner specializing in PCB prototyping, multi-layer circuit board fabrication, and full-turnkey contract assembly. Known for rapid turnaround times and rigorous quality assurance, they empower engineers and innovators worldwide to bring complex electronic hardware designs to life efficiently."><a class="partner-logo" href="https://www.pcbway.com"><img src="assets/partners/pcbway.svg" alt="PCBWay" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #e47d34"
+                data-description="Objective3D is a leading additive manufacturing and 3D printing solutions provider across Australasia, offering cutting-edge Stratasys hardware, materials, and bureau services. They help engineers and designers bridge the gap between digital concepts and functional physical reality through rapid prototyping and expert technical support."><a class="partner-logo" href="https://objective3d.com.au"><img src="assets/partners/o3d.svg" alt="Objective3D" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #ffb71b"
+                data-description="Ansys is a global leader in engineering simulation software, empowering design and development teams to predict how products behave under real-world physical conditions. By providing advanced tools for structural analysis, fluid dynamics, and multiphysics modeling, Ansys helps innovators optimize performance and reduce physical prototyping costs."><a class="partner-logo" href="https://ansys.synopsys.com"><img src="assets/partners/ansys.svg" alt="Ansys" loading="lazy" decoding="async"></a></li>
+              <li style="--planet-accent: #ffffff"
+                data-description="Autodesk is a global technology leader providing robust 3D design, engineering, and entertainment software. Their industry-standard tools empower creators, architects, and engineers to imagine, design, and fabricate complex systems digitally, streamlining workflows from conceptual modeling to advanced manufacturing."><a class="partner-logo" href="https://autodesk.com"><img src="assets/partners/autodesk.svg" alt="Autodesk" loading="lazy" decoding="async"></a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="orbit-controls">
+          <div class="orbit-legend" role="group" aria-label="Highlight a partner tier">
+            <button type="button" class="orbit-key" data-tier="title" aria-label="Title partners" aria-pressed="false" aria-controls="partner-orbits">Title<span> partners</span></button>
+            <button type="button" class="orbit-key" data-tier="principal" aria-label="Principal partners" aria-pressed="false" aria-controls="partner-orbits">Principal<span> partners</span></button>
+            <button type="button" class="orbit-key" data-tier="technical" aria-label="Technical partners" aria-pressed="false" aria-controls="partner-orbits">Technical<span> partners</span></button>
+          </div>
+          <button class="orbit-playback" type="button" aria-label="Pause orbits" aria-controls="partner-orbits">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <dialog id="planet-inspector" class="planet-inspector" aria-labelledby="planet-name" aria-describedby="planet-tier planet-description">
+          <div class="flight-viewport" aria-hidden="true" inert></div>
+          <button type="button" class="orbit-return footer-link glass pill" autofocus><span aria-hidden="true">←</span> Back to orbits</button>
+          <div class="planet-composition">
+            <div class="planet-stage" aria-hidden="true"></div>
+            <div class="planet-caption">
+              <p id="planet-tier"></p>
+              <h3 id="planet-name"></h3>
+              <p id="planet-description" class="planet-description" hidden></p>
+              <a class="planet-website footer-link glass pill" hidden>Visit website <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <section id="finish-line" class="wrap finish-line" aria-labelledby="socials-title">
+      <div class="finish-scene">
+        <div class="finish-track" aria-hidden="true">
+          <svg class="finish-car-clip" width="0" height="0" focusable="false">
+            <defs>
+              <clipPath id="finish-car-outline" clipPathUnits="objectBoundingBox">
+                <path transform="scale(.0006734007 .000952381)"
+                  d="M0 0 H1485 V646 H1053 C1041 654 1024 659 1002 659 C980 659 960 654 950 646 H524 V581 Q520 573 480 573 C480 608 474 632 451 645 C431 650 409 659 386 659 C365 659 350 652 338 643 Q331 635 325 636 H296 V647 H0 Z"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <div class="finish-rail"></div>
+          <div class="finish-car">
+            <span class="finish-body"><img src="assets/redshift-side.webp" alt="" width="1485" height="1050" decoding="async"></span>
+            <canvas class="finish-rear-edge" width="1241" height="270"></canvas>
+            <canvas class="finish-trail" width="560" height="110"></canvas>
+          </div>
+          <div class="finish-gate"><i></i></div>
+        </div>
+        <p class="finish-slogan"><span>Pointing Forwards.</span></p>
+      </div>
+      <div class="finish-contact">
+        <div class="finish-brand">
+          <h2 id="socials-title">Follow <span>Novaris</span></h2>
+          <p class="footer-copyright">&copy; 2026 Novaris</p>
+          <address class="finish-address">40 Charles Street, Kew VIC 3101, Australia</address>
+        </div>
+        <ul class="social-links">
+          <li><a class="footer-link glass pill" href="https://instagram.com/novaris.tgs"><img src="assets/insta.webp" width="18" height="18" alt="" loading="lazy">Instagram</a></li>
+          <li><a class="footer-link glass pill" href="https://tiktok.com/@novaris.tgs"><img src="assets/tiktok.webp" width="18" height="18" alt="" loading="lazy">TikTok</a></li>
+          <li><a class="footer-link glass pill" href="mailto:info@team-novaris.com"><img src="assets/outlook.webp" width="18" height="18" alt="" loading="lazy">Email</a></li>
+        </ul>
+      </div>
+    </section>
+    <div class="footer-dock"></div>
+  </footer>
+  <dialog class="profile-dialog glass" aria-labelledby="profile-name" aria-describedby="profile-bio">
+    <form method="dialog">
+      <button class="profile-close glass pill" type="submit" aria-label="Close profile" autofocus></button>
+    </form>
+    <div class="profile-content">
+      <img class="profile-photo" width="720" height="720" alt="">
+      <div class="profile-copy">
+        <p id="profile-division" class="eyebrow ruled"></p>
+        <h2 id="profile-name"></h2>
+        <p id="profile-role"></p>
+        <p id="profile-bio"></p>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

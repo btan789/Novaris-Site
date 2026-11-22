@@ -1,0 +1,50 @@
+.page-loader:not([hidden]), .is-site-loading .page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+}
+.page-loader-content {
+  display: grid;
+  justify-items: center;
+  gap: .75rem;
+}
+.page-loader-logo {
+  display: block;
+  width: clamp(8rem, 15vw, 12rem);
+}
+.page-loader-logo circle {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+}
+.page-loader-track { opacity: .22; }
+.page-loader-fill {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 110ms linear;
+}
+.page-loader-percent {
+  color: #fff;
+  font-size: clamp(.95rem, 1.5vw, 1.2rem);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.is-site-loading { overflow: hidden; }
+.is-site-loading:not(.is-site-revealing) #top > .starfield { display: none; }
+.is-site-loading:not(.is-site-revealing) #top > :is(.skip, header, main, footer) {
+  visibility: hidden;
+}
+.is-site-loading:not(.is-site-revealing) :is(
+  .bar.is-introducing > :is(.brand, nav, .bar-surface),
+  .hero-copy :is(h1, .hero-slogan, .intro, .explore)
+) {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-loader-fill { transition: none; }
+}

@@ -1,0 +1,377 @@
+#partners {
+  --partners-top-space: clamp(2rem, 7svh, 5rem);
+  scroll-margin-top: var(--partners-top-space);
+  block-size: calc(100dvh - var(--partners-top-space));
+  min-block-size: min-content;
+  padding-block-end: clamp(1.5rem, 5svh, 4rem);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+#partners:focus { outline: none; }
+@media (max-width: 1240px) {
+  #partners { --partners-top-space: calc(8.75rem + env(safe-area-inset-top)); }
+}
+.planet-projection { position: absolute; pointer-events: none; }
+.solar-system:not(.is-ready) {
+  --partner-logo-width: clamp(4rem, 8vw, 8rem);
+  --partner-logo-height: clamp(2rem, 3vw, 3rem);
+}
+.solar-core, .orbit-controls { display: none; }
+.solar-system [data-tier="title"] { --band: var(--red); }
+.solar-system [data-tier="principal"] { --band: #ff7887; }
+.solar-system [data-tier="technical"] { --band: white; }
+
+.solar-system.is-ready {
+  --min-map-height: clamp(22rem, 32vw, 31rem);
+  display: grid;
+  grid-template-rows: minmax(var(--min-map-height), 1fr) auto;
+}
+.is-ready .solar-map {
+  position: relative;
+  isolation: isolate;
+  container-type: size;
+  block-size: 100%;
+}
+.solar-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(3.3rem, 5.4vw, 4.85rem);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.is-ready .solar-core { display: block; }
+.solar-core::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -95%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff957a8a, #ed685247 16%, #c33e4c1f 35%, transparent 67%);
+}
+.solar-core img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 .35rem #ffbb9b9c);
+}
+.solar-core span {
+  position: absolute;
+  inset: calc(100% + .32rem) auto auto 50%;
+  transform: translateX(-50%);
+  font: clamp(.66rem, 1.05vw, 1rem)/1 "Novaris Wordmark", sans-serif;
+  color: #fff4ec;
+}
+
+.is-ready .partner-tier { position: absolute; inset: 0; display: block; border: 0; padding: 0; pointer-events: none; }
+.is-ready .partner-tier h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.solar-map [data-tier="title"] {
+  --rx: 17.5cqw; --ry: 18cqh;
+  --planet-size: clamp(5.5rem, 9.5vw, 9.25rem);
+}
+.solar-map [data-tier="principal"] {
+  --rx: 31.5cqw; --ry: 33cqh;
+  --planet-size: clamp(2.75rem, 4.75vw, 4.625rem);
+}
+.solar-map [data-tier="technical"] {
+  --rx: 43.5cqw; --ry: 44cqh;
+  --planet-size: clamp(2.75rem, 4.75vw, 4.625rem);
+}
+.is-ready .partner-grid { position: absolute; inset: 0; display: block; }
+.is-ready .partner-grid::before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  inset: calc(50% - var(--ry)) calc(50% - var(--rx));
+  border: 1px solid color-mix(in srgb, var(--band) 46%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--band) 4%, transparent),
+    inset 0 0 0 4px color-mix(in srgb, var(--band) 5%, transparent);
+  transition: opacity 350ms, border-color 350ms;
+}
+.is-ready .partner-grid li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--planet-size);
+  height: var(--planet-size);
+  translate: -50% -50%;
+}
+.is-ready .partner-logo {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 0;
+  pointer-events: auto;
+  transition: transform 420ms ease-out, opacity 350ms;
+}
+.is-ready button.partner-logo { appearance: none; border: 0; background: none; cursor: zoom-in; }
+.solar-map.in-flight { visibility: hidden; }
+.planet-visual {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.planet-visual::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  width: 180%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: url("assets/partner-planets.webp?v=mineral") var(--sprite-x) var(--sprite-y) / 500% 300% no-repeat;
+  pointer-events: none;
+  z-index: -2;
+}
+.planet-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(ellipse 61% 53% at 50% 51%, #080a1280, #0b0b1238 54%, transparent 90%);
+  box-shadow: inset 1px 1px 1px color-mix(in srgb, var(--planet-accent) 36%, transparent);
+  pointer-events: none;
+}
+.planet-mark {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  filter: url(#curve-partner-mark);
+  mask-image: radial-gradient(circle, black 32%, rgb(0 0 0 / .94) 49%, rgb(0 0 0 / .70) 66%, transparent 72%);
+}
+.is-ready .planet-mark img {
+  width: 94%;
+  height: 70%;
+  object-fit: contain;
+}
+.has-mark-atlas .planet-mark {
+  position: relative;
+  isolation: isolate;
+  filter: none;
+  mask-image: none;
+}
+.has-mark-atlas .planet-mark img { display: none; }
+.has-mark-atlas .planet-mark::before, .has-mark-atlas .planet-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/flight-marks.webp") no-repeat;
+  transition: opacity 180ms ease-out;
+}
+.has-mark-atlas .planet-mark::before {
+  opacity: 0;
+  background-size: 500% calc(1000% / 3);
+  background-position: var(--sprite-x) calc(var(--sprite-y) * 6 / 7);
+}
+.has-mark-atlas .planet-mark::after {
+  background-size: 1500% 1000%;
+  background-position: calc(var(--sprite-index) * 100% / 14) bottom;
+  /* Keep the two marks bright where their edges overlap during the fade. */
+  mix-blend-mode: plus-lighter;
+}
+/* Apply the size cue once while the logo opacity carries the hover transition. */
+.solar-map .partner-logo:focus-visible .planet-visual { transform: scale(1.05); }
+.has-mark-atlas .partner-logo:focus-visible .planet-mark::before { opacity: 1; }
+.has-mark-atlas .partner-logo:focus-visible .planet-mark::after { opacity: 0; }
+@media (hover: hover) {
+  .solar-map .partner-logo:hover .planet-visual { transform: scale(1.05); }
+  .has-mark-atlas .partner-logo:hover .planet-mark::before { opacity: 1; }
+  .has-mark-atlas .partner-logo:hover .planet-mark::after { opacity: 0; }
+}
+.is-ready .partner-tier.is-muted .partner-grid::before { opacity: .32; }
+.is-ready .partner-tier.is-muted .partner-logo { pointer-events: none; opacity: .24; transform: scale(.65); }
+.is-ready .partner-tier.is-selected .partner-grid::before { border-color: var(--band); }
+
+.is-ready .orbit-controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: .75rem 0 0;
+}
+.orbit-legend { display: flex; flex-wrap: wrap; gap: .25rem clamp(.25rem, 1.5vw, 1.75rem); }
+.orbit-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  color: #dfdfe6;
+  font: 500 .875rem/1 Inter, sans-serif;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: background 250ms, border-color 250ms;
+}
+.orbit-key { padding: .5rem .75rem; white-space: pre; }
+.orbit-key::before {
+  content: "";
+  width: 1rem;
+  height: .65rem;
+  margin-inline-end: .5rem;
+  border-radius: 50%;
+  border: 1px solid var(--band);
+  transform: rotate(-28deg);
+  box-shadow: inset 0 0 .32rem color-mix(in srgb, var(--band) 30%, transparent);
+}
+.orbit-key:is(:hover, :focus-visible, [aria-pressed="true"]) {
+  background: color-mix(in srgb, var(--band) 10%, transparent);
+  border-color: color-mix(in srgb, var(--band) 45%, transparent);
+  color: #fff;
+}
+.orbit-controls .orbit-playback {
+  flex: 0 0 2.75rem;
+  border-color: #ffffff2a;
+  background: #ffffff08;
+}
+.orbit-playback:is(:hover, :focus-visible) { background: #ffffff18; }
+.orbit-playback span {
+  width: .65rem;
+  height: .8rem;
+  border-inline: 3px solid currentColor;
+}
+.orbit-playback[data-paused] span {
+  width: .7rem;
+  height: .85rem;
+  border: 0;
+  background: currentColor;
+  clip-path: polygon(13% 0, 100% 50%, 13% 100%);
+}
+
+html { scrollbar-gutter: stable; }
+html:has(.planet-inspector[open]) { overflow: hidden; }
+.planet-inspector {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  overflow: hidden auto;
+  overscroll-behavior: contain;
+}
+.planet-inspector::backdrop { background: transparent; }
+.flight-viewport {
+  position: fixed;
+  inset: 0;
+  overflow: clip;
+  pointer-events: none;
+}
+.flight-viewport canvas { display: block; width: 100%; height: 100%; }
+.flight-viewport.static-portrait { background: #040405; }
+.orbit-return {
+  position: fixed;
+  z-index: 2;
+  top: max(1.25rem, env(safe-area-inset-top));
+  left: max(var(--gutter), env(safe-area-inset-left));
+  color: var(--text);
+  cursor: pointer;
+}
+.planet-composition {
+  position: relative;
+  pointer-events: none;
+  --portrait-size: clamp(11rem, min(28vw, 52dvh), 24rem);
+  min-height: 100%;
+  width: min(100%, 76rem);
+  margin-inline: auto;
+  padding: 6rem var(--gutter);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 7vw, 8rem);
+}
+.planet-stage {
+  position: relative;
+  justify-self: center;
+  width: var(--portrait-size);
+  aspect-ratio: 1;
+  pointer-events: auto;
+}
+.planet-stage .planet-mark img:only-child { filter: brightness(1.1); }
+.planet-stage .planet-mark:has(.partner-colour) img:first-child { opacity: 0; }
+.planet-stage .planet-mark .partner-colour { opacity: 1; }
+.planet-caption {
+  opacity: 0;
+  pointer-events: auto;
+  text-shadow: 0 2px 12px #040405, 0 0 40px #040405;
+}
+.planet-caption a { pointer-events: auto; }
+.orbit-return { opacity: 0; transition: opacity 210ms ease; }
+.is-presented .orbit-return { opacity: 1; transition-duration: 350ms; }
+#planet-tier {
+  color: var(--band);
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+.planet-caption h3 {
+  margin: .5rem 0 0;
+  font-size: clamp(2.15rem, 4.65vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.planet-description {
+  max-width: 52ch;
+  margin-top: 1rem;
+  color: #e0dfe4;
+  font-size: clamp(.95rem, 1.4vw, 1.1rem);
+  line-height: 1.55;
+}
+.planet-website { margin-top: 1.5rem; }
+.planet-website[hidden] { display: none; }
+@media (max-width: 680px) and (min-height: 440px) {
+  .planet-composition {
+    --portrait-size: clamp(8rem, min(50vw, 32dvh), 15rem);
+    padding: 5.5rem 1.25rem 2.5rem;
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 4dvh, 2.5rem);
+    align-content: center;
+    text-align: center;
+  }
+  .planet-description { margin-inline: auto; }
+}
+@media (max-width: 680px) {
+  .solar-system.is-ready { --min-map-height: clamp(21rem, 93vw, 32rem); }
+  .solar-core { width: clamp(2.25rem, 8.5vw, 3rem); }
+  .solar-core span { display: none; }
+  .planet-mark { filter: none; }
+  .solar-map [data-tier="title"] {
+    --rx: 19cqw; --ry: 17cqh; --planet-size: clamp(4.15rem, 18vw, 6rem);
+  }
+  .solar-map [data-tier="principal"] {
+    --rx: 30cqw; --ry: 31cqh; --planet-size: clamp(2.75rem, 12vw, 3.75rem);
+  }
+  .solar-map [data-tier="technical"] {
+    --rx: 41cqw; --ry: 43cqh; --planet-size: clamp(2.75rem, 11.5vw, 3.5rem);
+  }
+  .is-ready .orbit-controls { padding: .5rem; gap: .12rem; }
+  .orbit-legend { gap: 0; }
+  .orbit-key { padding-inline: clamp(.25rem, 1.35vw, .75rem); font-size: .75rem; }
+  .orbit-key::before { width: .75rem; height: .5rem; margin-inline-end: .25rem; }
+  .orbit-key span { display: none; }
+}

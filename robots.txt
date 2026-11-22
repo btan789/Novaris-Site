@@ -1,0 +1,5 @@
+# All crawlers, including search and AI-search bots, may read the whole site.
+User-agent: *
+Allow: /
+
+Sitemap: https://team-novaris.com/sitemap.xml
