@@ -21,9 +21,9 @@
   <link rel="icon" href="assets/novaris.svg" type="image/svg+xml">
   <link rel="stylesheet" href="site.css?v=launch">
   <link rel="stylesheet" href="page-loader.css">
-  <link rel="stylesheet" href="gallery.css?v=competition-filter">
+  <link rel="stylesheet" href="gallery.css?v=filter-layout">
   <script src="starfield.js?v=page-loader" defer></script>
-  <script src="gallery.js?v=custom-captions" type="module"></script>
+  <script src="gallery.js?v=filter-status" type="module"></script>
   <noscript><style>.photo-grid img[data-opening-preview] { display: none; }</style></noscript>
   <!-- Structured data: tells search engines who the team is. Keep it in step with the visible page text. -->
   <script type="application/ld+json">
@@ -69,7 +69,7 @@
     <div class="gallery-heading">
       <h1>Gallery<span>.</span></h1>
       <div class="gallery-overview">
-        <p id="gallery-summary" role="status">42 photos from the Novaris workshop at Trinity Grammar School, the 2026 Australian National Finals and the 2026 STEM Racing World Finals in Singapore.</p>
+        <p id="gallery-summary" class="visually-hidden" role="status"></p>
         <div class="picker" hidden>
           <label for="competition">Filter photos</label>
           <select id="competition" class="glass pill" aria-controls="gallery-grid">

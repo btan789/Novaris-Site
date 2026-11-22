@@ -172,6 +172,15 @@ new ResizeObserver(() => {
 }).observe(teamRoster);
 updateLineupMode();
 
+const signaturePositions = new ResizeObserver(entries => {
+  for (const { target } of entries) {
+    target.closest(".member-trigger").style.setProperty("--member-name-height", `${target.offsetHeight}px`);
+  }
+});
+for (const name of teamRoster.querySelectorAll(".member-name")) {
+  signaturePositions.observe(name);
+}
+
 for (const trigger of teamRoster.querySelectorAll(".member-trigger")) {
   trigger.addEventListener("click", () => {
     const member = trigger.dataset.member;

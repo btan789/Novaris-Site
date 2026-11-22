@@ -24,7 +24,7 @@
 .gallery-heading h1 span { color: var(--red); }
 .gallery-overview { display: grid; justify-items: end; gap: .75rem; }
 .gallery-overview .picker[hidden] { display: none; }
-.gallery-heading p, .viewer-position { color: var(--muted); font-size: .9rem; }
+.viewer-position { color: var(--muted); font-size: .9rem; }
 .photo-grid {
   display: grid;
   gap: clamp(.35rem, .8vw, .8rem);
@@ -119,9 +119,7 @@
   .viewer-controls { grid-template-columns: 1fr 1fr; gap: .65rem; }
   .viewer-caption { grid-area: 1 / 1 / 2 / -1; }
 }
-.gallery-heading p { max-width: 24rem; text-align: right; line-height: 1.45; }
 @media (max-width: 620px) {
   .gallery-heading { flex-direction: column; align-items: start; gap: .6rem; }
   .gallery-overview { justify-items: start; }
-  .gallery-heading p { text-align: left; }
 }

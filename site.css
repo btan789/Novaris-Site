@@ -666,6 +666,15 @@ nav:has(> a:is(:hover, :focus-visible)) > .nav-indicator,
   transform: scale(calc(1 + .06 * var(--member-highlight)));
   transition-property: transform;
 }
+.member-signature {
+  display: block;
+  width: min(85%, 8rem);
+  height: clamp(1rem, 3.5vw, 2.2rem);
+  margin-top: .25rem;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+}
 .member-preview {
   position: absolute;
   inset: auto .18rem 0;
@@ -727,7 +736,29 @@ nav:has(> a:is(:hover, :focus-visible)) > .nav-indicator,
   .member, .member-portrait {
     transition-delay: var(--lineup-shift-delay);
   }
-  .member-trigger { --member-copy-inset: clamp(.7rem, 1.45vw, 1.4rem); }
+  .member-trigger {
+    --member-copy-inset: clamp(.7rem, 1.45vw, 1.4rem);
+    --member-signature-height: clamp(1.5rem, 2.4vw, 2.2rem);
+    --member-signature-gap: .25rem;
+  }
+  .member-signature {
+    position: absolute;
+    top: calc(100% - 4.85rem + var(--member-signature-gap));
+    left: 50%;
+    width: min(82%, 8rem);
+    height: var(--member-signature-height);
+    margin: 0;
+    transform: translateX(-50%);
+    transition: top 450ms var(--highlight-glide-easing), left 450ms var(--highlight-glide-easing),
+      transform 450ms var(--highlight-glide-easing), object-position 450ms var(--highlight-glide-easing);
+  }
+  .team-roster:not(.has-sliding-background) .member:has(.member-trigger:is(:hover, :focus-visible)) .member-signature,
+  .member.is-copy-visible .member-signature {
+    top: calc(var(--member-copy-inset) + var(--member-name-height, 1.2em) + var(--member-signature-gap));
+    left: var(--member-copy-inset);
+    transform: translateX(0);
+    object-position: left center;
+  }
   .member-preview {
     --member-copy-visible: var(--member-highlight);
     inset: var(--member-copy-inset) .65rem auto var(--member-copy-inset);
@@ -760,7 +791,11 @@ nav:has(> a:is(:hover, :focus-visible)) > .nav-indicator,
   .has-sliding-background .member-copy {
     transition-delay: calc(var(--member-copy-exit) * (1 - var(--member-copy-visible)));
   }
-  .member-name { font-size: clamp(1.125rem, 2.35vw, 2.6rem); line-height: 1.05; }
+  .member-name {
+    margin-bottom: calc(var(--member-signature-height) + var(--member-signature-gap));
+    font-size: clamp(1.125rem, 2.35vw, 2.6rem);
+    line-height: 1.05;
+  }
   .member-role { font-size: clamp(.875rem, 1.25vw, 1.25rem); line-height: 1.25; }
   .member-intro { font-size: clamp(.94rem, 1.2vw, 1.25rem); margin-top: .5rem; }
   .member-portrait {

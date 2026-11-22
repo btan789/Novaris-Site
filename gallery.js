@@ -5,7 +5,6 @@ const grid = document.querySelector(".photo-grid");
 const allPhotos = Array.from(grid.querySelectorAll("a"));
 const filter = document.querySelector("#competition");
 const summary = document.querySelector("#gallery-summary");
-const allPhotosSummary = summary.textContent;
 const viewer = document.querySelector(".photo-viewer");
 const viewport = viewer.querySelector(".viewer-viewport");
 const track = viewport.querySelector(".viewer-track");
@@ -23,7 +22,7 @@ function applyFilter() {
     photo.hidden = category !== "" && photo.dataset.category !== category;
   }
   photos = allPhotos.filter(photo => !photo.hidden);
-  summary.textContent = category ? `${photos.length} photos` : allPhotosSummary;
+  summary.textContent = `${photos.length} photos`;
 }
 
 filter.addEventListener("change", applyFilter);
