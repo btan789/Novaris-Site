@@ -87,6 +87,7 @@ async function showPhoto(slot, glide = true) {
 
   if (image.src !== originalURL) {
     const original = new Image();
+    original.alt = image.alt;
     original.src = originalURL;
     try {
       await original.decode();
@@ -98,7 +99,6 @@ async function showPhoto(slot, glide = true) {
     original.className = image.className;
     original.dataset.slot = image.dataset.slot;
     original.style.transform = image.style.transform;
-    original.alt = image.alt;
     if (image === activeSlide) activeSlide = original;
     else original.setAttribute("aria-hidden", "true");
     image.replaceWith(original);
